@@ -1,0 +1,97 @@
+/* common */
+body {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+h3 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+article {
+  flex: 1 1 40%;
+}
+
+.graph {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px #8c8c8c2d;
+  padding: 20px;
+  font-size: 50px;
+  gap: 10px;
+
+  & li {
+    cursor: pointer;
+    color: white;
+    text-shadow:0 0 2px #3e3e3e;
+  }
+
+  & li:hover {
+    color: #ff219f;
+    text-shadow: 10px 10px 0 #1bfff0;
+  }
+}
+
+/* text */
+@font-face {
+  font-family: 'Epilogue VariableFont';
+  src: url('Epilogue/Epilogue-VariableFont_wght.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.text {
+  font-family: 'Epilogue VariableFont';
+
+  & li {
+    transition: all 0.5s;
+    font-variation-settings: "wght" 100;
+  }
+
+  & li:hover {
+    font-variation-settings: "wght" 900;
+  }
+}
+
+
+/* anicons */
+.anicons {
+  font-family: "Anicons Regular", sans-serif;
+}
+
+.icon {
+  font-variation-settings: "TIME" 1;
+  transition: all .5s ease;
+}
+
+.icon:hover {
+  font-variation-settings: "TIME" 100;
+}
+
+/* icomoon */
+@font-palette-values --two {
+  font-family: "icomoon";
+  base-palette: 2;
+  override-colors:
+    0 green,
+    1 yellow;
+}
+
+@font-palette-values --five {
+  font-family: "icomoon";
+  base-palette: 5;
+}
+
+.two {
+  font-palette: --two;
+}
+
+.five {
+  font-palette: --five;
+}
