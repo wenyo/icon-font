@@ -1,10 +1,14 @@
 /* common */
 body {
+  font-family: sans-serif;
   padding: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 50px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 h3 {
@@ -29,25 +33,75 @@ article {
     cursor: pointer;
     color: white;
     text-shadow:0 0 2px #3e3e3e;
+    transition: all .5s;
   }
 
   & li:hover {
     color: #ff219f;
     text-shadow: 10px 10px 0 #1bfff0;
   }
+
+  & .animation:hover {
+    text-shadow: unset;
+  }
 }
 
 /* text */
+.text {
+  flex-direction: column;
+
+  & li {
+    transition: all 0.5s;
+  }
+
+  & li:hover {
+    font-weight: 600;
+  }
+}
+
+@keyframes fontWeight {
+  0% {
+    font-weight: 100;
+  }
+  40% {
+    font-weight: 400;
+  }
+  50% {
+    font-weight: 600;
+  }
+  60% {
+    font-weight: 400;
+  }
+  70% {
+    font-weight: 300;
+  }
+  100% {
+    font-weight: 100;
+  }
+}
+
+.animation {
+  font-weight: lighter;
+  &:hover {
+    animation-name: fontWeight;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+}
+
+/* Epilogue */
 @font-face {
   font-family: 'Epilogue VariableFont';
-  src: url('Epilogue/Epilogue-VariableFont_wght.ttf');
+  src: url('../Epilogue/Epilogue-VariableFont_wght.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
+  text-shadow: unset;
 }
 
-.text {
+.epilogue {
   font-family: 'Epilogue VariableFont';
+  flex-direction: column;
 
   & li {
     transition: all 0.5s;
